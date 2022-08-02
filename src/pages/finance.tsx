@@ -1,24 +1,24 @@
+import {ReactElement} from "react";
 import useSWR from 'swr';
-import {v4} from "uuid";
 import {fetcher} from "../utils/fetcher";
+import {Layout} from "../components/layout/Layout";
+import {News} from "../components/news/News";
+import {useRouter} from "next/router";
 
-function finance() {
+export default function Finance():ReactElement {
+    const router = useRouter();
     const {data, error} = useSWR('business', fetcher);
-
-    if(error) return "Something went wrong";
-    if(!data) return 'Loading...';
+    const section = router.pathname.slice(1);
 
     return (
-        <div>
-            <h2>Top Finance Stories:</h2>
-            <ul>
-                {data?.results.map(
-                    story =>
-                        <li key={v4()}>{story.title}</li>
-                )}
-            </ul>
-        </div>
+        <News data={data} error={error} section={section} />
     )
 }
 
-export default finance;
+Finance.getLayout = function getLayout(page: ReactElement) {
+    return (
+        <Layout>
+            {page}
+        </Layout>
+    )
+}
