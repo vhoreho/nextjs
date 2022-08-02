@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import styles from './Header.module.scss';
-import logo from '../../../public/logo.svg';
+import logo from '../../../../public/logo.svg';
 import {ActiveLink} from "../../ActiveLink";
 import {Burger} from "./burger/Burger";
 import {useState} from "react";
@@ -13,7 +13,7 @@ export function Header() {
 
     return <header className={styles.header} >
         <div className='container flex-center'>
-            <Link href='/pages' >
+            <Link href='/' >
                 <a className={styles.logo}>
                     <Image
                         alt='Best News'

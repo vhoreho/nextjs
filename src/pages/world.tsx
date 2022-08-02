@@ -1,16 +1,16 @@
+import {ReactElement} from "react";
 import useSWR from 'swr';
 import {v4} from "uuid";
 import {fetcher} from "../utils/fetcher";
+import {Layout} from "../components/layout/Layout";
 
-function world() {
+export default function World():ReactElement {
     const {data, error} = useSWR('world', fetcher);
 
-    if(error) return "Something went wrong";
-    if(!data) return 'Loading...';
-
     return (
-        <div>
-            <h2>Top World Stories:</h2>
+        <div className='container'>
+            {error && <h2>Something went wrong</h2>}
+            {!data && <h2>Loading...</h2>}
             <ul>
                 {data?.results.map(
                     story =>
@@ -21,4 +21,10 @@ function world() {
     )
 }
 
-export default world;
+World.getLayout = function getLayout(page: ReactElement) {
+    return (
+        <Layout>
+            {page}
+        </Layout>
+    )
+}
