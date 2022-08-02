@@ -1,23 +1,17 @@
 import {ReactElement} from "react";
 import useSWR from 'swr';
-import {v4} from "uuid";
 import {fetcher} from "../utils/fetcher";
 import {Layout} from "../components/layout/Layout";
+import {News} from "../components/news/News";
+import {useRouter} from "next/router";
 
 export default function World():ReactElement {
+    const router = useRouter();
     const {data, error} = useSWR('world', fetcher);
+    const section = router.pathname.slice(1);
 
     return (
-        <div className='container'>
-            {error && <h2>Something went wrong</h2>}
-            {!data && <h2>Loading...</h2>}
-            <ul>
-                {data?.results.map(
-                    story =>
-                        <li key={v4()}>{story.title}</li>
-                )}
-            </ul>
-        </div>
+        <News data={data} error={error} section={section} />
     )
 }
 
