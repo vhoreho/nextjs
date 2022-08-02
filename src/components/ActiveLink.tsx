@@ -1,19 +1,17 @@
-// @ts-ignore
+import React, {useState, useEffect, ReactElement, Children, FunctionComponent} from 'react'
 import { useRouter } from 'next/router'
-// @ts-ignore
 import Link, { LinkProps } from 'next/link'
-import React, { useState, useEffect, ReactElement, Children } from 'react'
 
 type ActiveLinkProps = LinkProps & {
     children: ReactElement
     activeClassName: string
 }
 
-const ActiveLink = ({
+export const ActiveLink:FunctionComponent<ActiveLinkProps> = ({
                         children,
                         activeClassName,
                         ...props
-                    }: ActiveLinkProps) => {
+                    }) => {
     const { asPath, isReady } = useRouter()
 
     const child = Children.only(children)
@@ -61,5 +59,3 @@ const ActiveLink = ({
         </Link>
     )
 }
-
-export default ActiveLink

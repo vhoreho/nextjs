@@ -1,5 +1,4 @@
-import styles from '../../styles/components/header/Menu.module.scss';
-// @ts-ignore
+import styles from './Menu.module.scss';
 import Link from "next/link";
 
 export const Menu = ({open, setOpen}) => {
@@ -7,19 +6,19 @@ export const Menu = ({open, setOpen}) => {
         <div>
             <button className={styles.close} onClick={() => setOpen(!open)}>x</button>
             <nav className={styles.menu}>
-                <Link href="/">
+                <Link href="/pages">
                     <a className={styles.link}>Home</a>
                 </Link>
                 <Link href="/stories">
                     <a className={styles.link}>World</a>
                 </Link>
-                <Link href="/automobile">
+                <Link href="/pages/automobile">
                     <a className={styles.link}>Automobiles</a>
                 </Link>
                 <Link href='/real' >
                     <a className={styles.link}>Real Estate</a>
                 </Link>
-                <Link href='/finance'>
+                <Link href='/pages/finance'>
                     <a className={styles.link}>Finance</a>
                 </Link>
             </nav>

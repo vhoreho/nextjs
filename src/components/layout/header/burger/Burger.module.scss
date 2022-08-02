@@ -1,4 +1,4 @@
-@import '../../common/mixins';
+@import '../../../../styles/mixins';
 
 .button {
   display: none;
@@ -10,7 +10,8 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10;
+  z-index: 1;
+  
   @include for-tablet-landscape-up {
     display: flex;
   }
@@ -27,5 +28,11 @@
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
+  }
+}
+
+.button.active {
+  div {
+    background: #ffffff;
   }
 }
