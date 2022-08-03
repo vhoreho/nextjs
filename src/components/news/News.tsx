@@ -1,6 +1,6 @@
 import {FC} from "react";
 import {v4} from "uuid";
-import {Story} from "./story/Story";
+import {Card} from "./card/Card";
 import styles from './News.module.scss';
 
 type NewsProps = {
@@ -16,7 +16,7 @@ export const News:FC<NewsProps> = ({data,error,section}) => {
             {!data && <h2>Loading...</h2>}
             <ul className={styles.list}>
                 {data?.results.map(
-                    story => <Story key={v4()} story={story} section={section} />
+                    story => <Card key={v4()} story={story} section={section} />
                 )}
             </ul>
         </div>
