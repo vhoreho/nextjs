@@ -1,15 +1,28 @@
 import Image from "next/image";
 import moment from "moment";
 import styles from './styles.module.scss';
+import Link from "next/link";
 
 export const Card = ({story, section}) => {
   const date = moment(story.published_date).format('LLL');
-  const {section:category, title, abstract, multimedia} = story;
+  const {section:category, title, abstract, multimedia, uri} = story;
+  const path = uri.slice(6);
 
   return (<li className={styles.card}>
     <div className={styles.cardText}>
       <span className={styles.cardSection}>{!category ? section : category}</span>
-      <h2 className={styles.cardTitle}>{!title ? 'Title is not defined' : title}</h2>
+      <Link href={{
+        pathname: '/[...article]',
+        query: {
+          title,
+          category,
+          date,
+          abstract,
+          multimedia
+        }
+      }} as={`/${path}`}>
+        <a className={styles.card__title}>{!title ? 'Title is not defined' : title}</a>
+      </Link>
       <p className={styles.cardDescription}>{!abstract ? 'Title is not defined' : abstract}</p>
       <span className={styles.cardDate}>{date}</span>
     </div>
