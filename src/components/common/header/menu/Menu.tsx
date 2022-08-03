@@ -1,5 +1,6 @@
-import styles from './Menu.module.scss';
 import Link from "next/link";
+
+import styles from './styles.module.scss';
 
 export const Menu = ({open, setOpen}) => {
     return (

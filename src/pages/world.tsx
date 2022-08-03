@@ -1,8 +1,7 @@
 import {ReactElement} from "react";
 import useSWR from 'swr';
 import {v4} from "uuid";
-import {fetcher} from "../utils/fetcher";
-import {Layout} from "../components/layout/Layout";
+import {fetcher} from "utils/fetcher";
 
 export default function World():ReactElement {
     const {data, error} = useSWR('world', fetcher);
@@ -14,17 +13,9 @@ export default function World():ReactElement {
             <ul>
                 {data?.results.map(
                     story =>
-                        <li key={v4()}>{story.title}</li>
+                        <li key={v4()}  >{story.title}</li>
                 )}
             </ul>
         </div>
-    )
-}
-
-World.getLayout = function getLayout(page: ReactElement) {
-    return (
-        <Layout>
-            {page}
-        </Layout>
     )
 }

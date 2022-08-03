@@ -1,12 +1,14 @@
+import {useState} from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import styles from './Header.module.scss';
-import logo from '../../../../public/logo.svg';
-import {ActiveLink} from "../../ActiveLink";
+import {ActiveLink} from "../active-link/ActiveLink";
 import {Burger} from "./burger/Burger";
-import {useState} from "react";
 import {Menu} from "./menu/Menu";
+
+import styles from './styles.module.scss';
+
+import logo from '../../../../public/logo.svg';
 
 export function Header() {
     const [open, setOpen] = useState(false);

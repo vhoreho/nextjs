@@ -1,5 +1,6 @@
-import styles from './Burger.module.scss'
 import classNames from "classnames";
+
+import styles from './styles.module.scss'
 
 export const Burger = ({open, setOpen}) => {
     const btnClass = classNames(styles.button, {
