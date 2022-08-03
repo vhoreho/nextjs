@@ -7,19 +7,19 @@ export const Menu = ({open, setOpen}) => {
         <div>
             <button className={styles.close} onClick={() => setOpen(!open)}>x</button>
             <nav className={styles.menu}>
-                <Link href="/pages">
+                <Link href="/">
                     <a className={styles.link}>Home</a>
                 </Link>
-                <Link href="/stories">
+                <Link href="/world">
                     <a className={styles.link}>World</a>
                 </Link>
-                <Link href="/pages/automobile">
+                <Link href="/automobile">
                     <a className={styles.link}>Automobiles</a>
                 </Link>
-                <Link href='/real' >
+                <Link href='/realestate' >
                     <a className={styles.link}>Real Estate</a>
                 </Link>
-                <Link href='/pages/finance'>
+                <Link href='/finance'>
                     <a className={styles.link}>Finance</a>
                 </Link>
             </nav>

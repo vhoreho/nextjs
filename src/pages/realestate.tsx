@@ -1,7 +1,7 @@
 import {ReactElement} from "react";
 import useSWR from 'swr';
 import {useRouter} from "next/router";
-import {fetcher} from "../utils/fetcher";
+import {fetcher} from "utils/fetcher";
 import {News} from "components/news/News";
 
 export default function Realestate():ReactElement {
