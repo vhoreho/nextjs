@@ -4,6 +4,7 @@ import styles from './styles.module.scss';
 
 export const Card = ({story, section}) => {
     const date = moment(story.published_date).format('LLL');
+    const uri = story.uri.slice(6);
     return (<li className={styles.card}>
         <div className={styles.card__text}>
             <span className={styles.card__section}>{!story.section ? section : story.section}</span>
