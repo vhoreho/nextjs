@@ -30,13 +30,13 @@ export function Header() {
                 <ActiveLink href="/world" activeClassName={styles.active}>
                     <a className={styles.link}>World</a>
                 </ActiveLink>
-                <ActiveLink href="/automobile" activeClassName={styles.active}>
+                <ActiveLink href="/automobiles" activeClassName={styles.active}>
                     <a className={styles.link}>Automobiles</a>
                 </ActiveLink>
                 <ActiveLink href='/realestate' activeClassName={styles.active}>
                     <a className={styles.link}>Real Estate</a>
                 </ActiveLink>
-                <ActiveLink href='/finance' activeClassName={styles.active}>
+                <ActiveLink href='/business' activeClassName={styles.active}>
                     <a className={styles.link}>Finance</a>
                 </ActiveLink>
             </nav>

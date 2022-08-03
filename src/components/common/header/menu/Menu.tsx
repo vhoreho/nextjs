@@ -13,13 +13,13 @@ export const Menu = ({open, setOpen}) => {
                 <Link href="/world">
                     <a className={styles.link}>World</a>
                 </Link>
-                <Link href="/automobile">
+                <Link href="/automobiles">
                     <a className={styles.link}>Automobiles</a>
                 </Link>
                 <Link href='/realestate' >
                     <a className={styles.link}>Real Estate</a>
                 </Link>
-                <Link href='/finance'>
+                <Link href='/business'>
                     <a className={styles.link}>Finance</a>
                 </Link>
             </nav>
