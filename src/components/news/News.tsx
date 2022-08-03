@@ -1,15 +1,19 @@
 import {FC} from "react";
 import {v4} from "uuid";
+import useSWR from "swr";
+import {fetcher} from "utils/fetcher";
+
 import {Card} from "./card/Card";
+
 import styles from './styles.module.scss';
 
 type Props = {
-    data: any;
-    error: string;
-    section: string;
+    section: string|string[];
 }
 
-export const News:FC<Props> = ({data,error,section}) => {
+export const News:FC<Props> = ({section}) => {
+    const {data, error} = useSWR(section, fetcher);
+
     return (
         <div className={styles.news}>
             {error && <h2>Something went wrong</h2>}
