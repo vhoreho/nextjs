@@ -6,7 +6,7 @@ import classNames from "classnames";
 export default function Home():ReactElement {
 
     return (
-            <div className={classNames('container', styles.home)}>
+            <div className={classNames('container')}>
                 <h1>Hello Next JS</h1>
             </div>
         )     

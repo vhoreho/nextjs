@@ -1,0 +1,37 @@
+@import "styles/variables";
+
+.category {
+  text-transform: capitalize;
+  padding: 4px 8px;
+  background: $primary-color;
+  border-radius: 4px;
+  color: $light-color;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 24px;
+  margin-right: 20px;
+}
+
+.date {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.top {
+  margin-bottom: 44px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 38px;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
