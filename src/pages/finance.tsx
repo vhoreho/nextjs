@@ -1,8 +1,8 @@
 import {ReactElement} from "react";
 import useSWR from 'swr';
-import {fetcher} from "../utils/fetcher";
-import {News} from "../components/news/News";
 import {useRouter} from "next/router";
+import {fetcher} from "../utils/fetcher";
+import {News} from "components/news/News";
 
 export default function Finance():ReactElement {
     const router = useRouter();
