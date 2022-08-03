@@ -1,6 +1,6 @@
-import styles from './Card.module.scss';
 import Image from "next/image";
 import moment from "moment";
+import styles from './styles.module.scss';
 
 export const Card = ({story, section}) => {
     const date = moment(story.published_date).format('LLL');

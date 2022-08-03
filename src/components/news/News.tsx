@@ -1,7 +1,7 @@
 import {FC} from "react";
 import {v4} from "uuid";
 import {Card} from "./card/Card";
-import styles from './News.module.scss';
+import styles from './styles.module.scss';
 
 type NewsProps = {
     data: any;
