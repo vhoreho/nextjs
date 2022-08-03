@@ -3,7 +3,9 @@ import {Layout} from "components/layout/Layout";
 
 export default function Home():ReactElement {
     return (
-            <div className='container'>
+            <div style={{
+                padding: '40px 0'
+            }} className='container'>
                 <h1>Hello Next JS</h1>
             </div>
         )     
