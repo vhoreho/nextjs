@@ -3,13 +3,13 @@ import {v4} from "uuid";
 import {Card} from "./card/Card";
 import styles from './styles.module.scss';
 
-type NewsProps = {
+type Props = {
     data: any;
     error: string;
     section: string;
 }
 
-export const News:FC<NewsProps> = ({data,error,section}) => {
+export const News:FC<Props> = ({data,error,section}) => {
     return (
         <div className={styles.news}>
             {error && <h2>Something went wrong</h2>}
