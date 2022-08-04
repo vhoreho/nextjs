@@ -5,13 +5,15 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(22, 22, 22, 0.1);
+  box-shadow: $shadow;
   border-radius: 8px;
-  background: $light-color;
+  background: $bg-color;
   overflow: hidden;
   position: relative;
+  width: 100%;
   @include for-tablet-landscape-up {
     flex-direction: column;
+    align-items: center;
   }
   &__text {
     width: 100%;
@@ -25,10 +27,16 @@
     }
   }
   &__image {
-    width: 612px;
+    max-width: 612px;
+    height: 458px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    width: 100%;
+    @include for-tablet-landscape-up {
+      max-height: 280px;
+    }
   }
 
   &__section {
@@ -36,7 +44,7 @@
     padding: 4px 8px;
     background: $primary-color;
     border-radius: 4px;
-    color: $light-color;
+    color: $bg-color;
     font-weight: 600;
     font-size: 16px;
     line-height: 18px;
@@ -46,7 +54,7 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 28px;
-    color: $dark-color;
+    color: $text-color;
     margin-bottom: 24px;
   }
   &__description {

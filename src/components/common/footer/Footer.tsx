@@ -1,12 +1,14 @@
 import Link from "next/link";
 
 import styles from './styles.module.scss';
+import classNames from "classnames";
 
 export function Footer() {
     const year = new Date().getFullYear();
+    const containerClass = classNames('container', styles.container)
 
     return <footer className={styles.footer}>
-        <div className={`container ${styles.container}`}>
+        <div className={containerClass}>
             <div className={styles.copy}>
                 &copy; {year}  Best News
             </div>

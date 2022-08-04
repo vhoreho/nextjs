@@ -1,14 +1,17 @@
 import {useState} from "react";
 import Link from "next/link";
+import {useRouter} from "next/router";
 import {Burger} from "./components/burger/Burger";
 import {Menu} from "./components/menu/Menu";
 
 import styles from './styles.module.scss';
-import {useRouter} from "next/router";
 
 export function Header() {
     const [open, setOpen] = useState(false);
     const router = useRouter();
+    const {section} = router.query
+
+    console.log(section)
 
     return <header className={styles.header} >
         <div className='container flex-center'>
@@ -32,16 +35,16 @@ export function Header() {
                     <a className={router.pathname === '/' ? `${styles.link_active}` : `${styles.link}`}>Home</a>
                 </Link>
                 <Link href="/world" className={styles.active}>
-                    <a className={router.pathname === '/world' ? `${styles.link_active}` : `${styles.link}`}>World</a>
+                    <a className={section === 'world' ? `${styles.link_active}` : `${styles.link}`}>World</a>
                 </Link>
-                <Link href="/automobile" className={styles.active}>
-                    <a className={router.pathname === '/automobile' ? `${styles.link_active}` : `${styles.link}`}>Automobiles</a>
+                <Link href="/automobiles" className={styles.active}>
+                    <a className={section === 'automobiles' ? `${styles.link_active}` : `${styles.link}`}>Automobiles</a>
                 </Link>
                 <Link href='/realestate' className={styles.active}>
-                    <a className={router.pathname === '/realestate' ? `${styles.link_active}` : `${styles.link}`}>Real Estate</a>
+                    <a className={section === 'realestate' ? `${styles.link_active}` : `${styles.link}`}>Real Estate</a>
                 </Link>
-                <Link href='/finance' className={styles.active}>
-                    <a className={router.pathname === '/finance' ? `${styles.link_active}` : `${styles.link}`}>Finance</a>
+                <Link href='/business' className={styles.active}>
+                    <a className={section === 'business' ? `${styles.link_active}` : `${styles.link}`}>Finance</a>
                 </Link>
             </nav>
             <Burger open={open} setOpen={setOpen} />
