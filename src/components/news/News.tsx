@@ -11,7 +11,6 @@ type Props = {
 
 export const News: FC<Props> = ({section}) => {
   const {data, error} = useSWR(section, categoryFetcher);
-
   return (
     <div className={styles.news}>
       {error && <h2>Something went wrong</h2>}
