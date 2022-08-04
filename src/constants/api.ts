@@ -1,1 +1,0 @@
-export const API_URL:string = 'https://api.nytimes.com/svc/topstories/v2';

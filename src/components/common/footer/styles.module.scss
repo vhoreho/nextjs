@@ -1,8 +1,9 @@
 @import "styles/mixins";
+@import "styles/variables";
 
 .footer {
-  color: #7A7A7A;
-  font-size: 14px;
+  color: $subtext-color;
+  @include font-xs-regular;
 }
 
 .container {
@@ -36,12 +37,12 @@
   margin-right: 32px;
   @include for-tablet-landscape-up {
     margin-right: 0;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 }
 
 .link:hover {
-  color: #161616;
+  color: $text-color;
 }
 
 .footer__socials {
@@ -50,20 +51,28 @@
   padding: 0;
   margin: 0;
   @include for-tablet-landscape-up {
-    margin: 1.5rem 0;
+    margin: 32px 0;
   }
 }
 
 .socials {
   &__item:not(:last-of-type) {
     margin-right: 13px;
-
+    @include for-tablet-landscape-up {
+      margin-right: 40px;
+    }
   }
   &_fill {
-    fill: #7A7A7A;
+    height: 20px;
+    width: 20px;
+    fill: $subtext-color;
+    @include for-tablet-landscape-up {
+      height: 30px;
+      width: 30px;
+    }
   }
   &_fill:hover {
-    fill: #161616;
+    fill: $text-color;
   }
 }
 
