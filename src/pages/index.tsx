@@ -1,7 +1,7 @@
 import {ReactElement} from "react";
+import classNames from "classnames";
 
 import styles from 'components/home/Home.module.scss';
-import classNames from "classnames";
 
 export default function Home():ReactElement {
 

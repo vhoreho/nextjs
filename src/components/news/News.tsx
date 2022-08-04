@@ -1,10 +1,8 @@
 import {FC} from "react";
-import {v4} from "uuid";
 import useSWR from "swr";
-import {fetcher} from "utils/fetcher";
-
 import {Card} from "./card/Card";
-
+import {v4} from "uuid";
+import {fetcher} from "utils/fetcher";
 import styles from './styles.module.scss';
 
 type Props = {

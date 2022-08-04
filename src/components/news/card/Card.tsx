@@ -15,12 +15,9 @@ export const Card = ({story, section}) => {
             {
                 story.multimedia ? <Image
                     src={story.multimedia[1].url}
-                    // width={story.multimedia[1].width}
-                    // height={story.multimedia[1].height}
                     alt={story.title}
                     layout='fill'
                     objectFit='cover'
-                    className='image'
                 /> : <h4>Image not found</h4>
             }
 
