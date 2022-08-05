@@ -1,0 +1,39 @@
+@import 'styles/mixins';
+@import "styles/variables";
+
+.button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1;
+  
+  @include for-tablet-landscape-up {
+    display: flex;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  div {
+    width: 32px;
+    height: 4px;
+    background: $text-color;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+  }
+}
+
+.button.active {
+  div {
+    background: $bg-color;
+  }
+}
