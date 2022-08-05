@@ -1,62 +1,57 @@
 import Link from "next/link";
 import classNames from "classnames";
+import { Instagram, Twitter, Facebook } from 'components/icon';
 import styles from './styles.module.scss';
 
 export function Footer() {
-    const year = new Date().getFullYear();
-    const containerClass = classNames('container', styles.container)
+  const year = new Date().getFullYear();
+  const containerClass = classNames('container', styles.container)
 
-    return <footer className={styles.footer}>
-        <div className={containerClass}>
-            <div className={styles.copy}>
-                &copy; {year}  Best News
-            </div>
-            <nav className={styles.nav}>
-                <Link href='/about'>
-                    <a className={styles.link}>About Us</a>
-                </Link>
-                <Link href='/help'>
-                    <a className={styles.link}>Help</a>
-                </Link>
-                <Link href='/advertise'>
-                    <a className={styles.link}>Advertise</a>
-                </Link>
-                <Link href='/policy'>
-                    <a className={styles.link}>Privacy Policy</a>
-                </Link>
-                <Link href='/terms'>
-                    <a className={styles.link}>Terms of Service</a>
-                </Link>
-            </nav>
-            <ul className={styles.footer__socials}>
-                <li className={styles.socials__item}>
-                    <Link href='https://twitter.com/'>
-                        <a target='_blank'>
-                            <svg className={styles.socials_fill} viewBox="0 0 20 16" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 1.89789C19.2645 2.21861 18.4744 2.43531 17.6438 2.53326C18.5008 2.0286 19.142 1.23432 19.4477 0.298631C18.6425 0.769299 17.7612 1.1006 16.8422 1.27812C16.2242 0.628768 15.4057 0.198364 14.5136 0.0537355C13.6216 -0.0908933 12.706 0.0583448 11.909 0.47828C11.1119 0.898215 10.4781 1.56535 10.1058 2.37611C9.73358 3.18688 9.64374 4.0959 9.85026 4.96206C8.2187 4.88144 6.62259 4.46412 5.16553 3.73718C3.70847 3.01023 2.42301 1.98991 1.39258 0.742437C1.04025 1.34053 0.837664 2.03398 0.837664 2.7725C0.837271 3.43734 1.00364 4.09199 1.32201 4.67838C1.64038 5.26477 2.10091 5.76476 2.66273 6.13398C2.01117 6.11358 1.37397 5.94032 0.804193 5.62863V5.68064C0.804127 6.6131 1.13189 7.51687 1.73186 8.23859C2.33184 8.96031 3.16707 9.45553 4.09583 9.64022C3.4914 9.8012 2.85769 9.82491 2.24258 9.70957C2.50462 10.5119 3.01506 11.2135 3.70243 11.7162C4.3898 12.2188 5.21969 12.4974 6.07593 12.5128C4.62242 13.6357 2.82735 14.2448 0.979477 14.2421C0.652146 14.2422 0.325091 14.2234 0 14.1858C1.87569 15.3726 4.05914 16.0024 6.28909 16C13.8378 16 17.9644 9.84739 17.9644 4.51132C17.9644 4.33796 17.96 4.16286 17.9521 3.9895C18.7548 3.41825 19.4476 2.71087 19.9982 1.90049L20 1.89789Z"/>
-                            </svg>
-                        </a>
-                    </Link>
-                </li>
-                <li className={styles.socials__item}>
-                    <Link href='https://www.google.com'>
-                        <a  target='_blank'>
-                            <svg className={styles.socials_fill} viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-                                <path fillRule="evenodd" clipRule="evenodd" d="M0 9.05025C0 13.5248 3.24975 17.2455 7.5 18V11.4998H5.25V9H7.5V6.99975C7.5 4.74975 8.94975 3.50025 11.0002 3.50025C11.6497 3.50025 12.3503 3.6 12.9998 3.69975V6H11.85C10.7498 6 10.5 6.54975 10.5 7.25025V9H12.9L12.5002 11.4998H10.5V18C14.7502 17.2455 18 13.5255 18 9.05025C18 4.0725 13.95 0 9 0C4.05 0 0 4.0725 0 9.05025Z"/>
-                            </svg>
-                        </a>
-                    </Link>
-                </li>
-                <li className={styles.socials__item}>
-                    <Link href='https://instagram.com/' >
-                        <a target='_blank'>
-                            <svg className={styles.socials_fill} viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7.99785 5.3322C6.52888 5.3322 5.3301 6.53101 5.3301 8C5.3301 9.46899 6.52888 10.6678 7.99785 10.6678C9.46681 10.6678 10.6656 9.46899 10.6656 8C10.6656 6.53101 9.46681 5.3322 7.99785 5.3322ZM15.9991 8C15.9991 6.89525 16.0091 5.80051 15.9471 4.69777C15.885 3.4169 15.5928 2.28014 14.6562 1.3435C13.7176 0.404868 12.5829 0.114672 11.302 0.0526304C10.1973 -0.0094115 9.10258 0.000595291 7.99985 0.000595291C6.89512 0.000595291 5.80041 -0.0094115 4.69768 0.0526304C3.41684 0.114672 2.28009 0.40687 1.34348 1.3435C0.404861 2.28214 0.11467 3.4169 0.0526294 4.69777C-0.00941132 5.80252 0.000595279 6.89725 0.000595279 8C0.000595279 9.10275 -0.00941132 10.1995 0.0526294 11.3022C0.11467 12.5831 0.406862 13.7199 1.34348 14.6565C2.28209 15.5951 3.41684 15.8853 4.69768 15.9474C5.80241 16.0094 6.89713 15.9994 7.99985 15.9994C9.10458 15.9994 10.1993 16.0094 11.302 15.9474C12.5829 15.8853 13.7196 15.5931 14.6562 14.6565C15.5948 13.7179 15.885 12.5831 15.9471 11.3022C16.0111 10.1995 15.9991 9.10475 15.9991 8ZM7.99785 12.1048C5.72636 12.1048 3.89315 10.2715 3.89315 8C3.89315 5.72847 5.72636 3.89523 7.99785 3.89523C10.2693 3.89523 12.1025 5.72847 12.1025 8C12.1025 10.2715 10.2693 12.1048 7.99785 12.1048ZM12.2707 4.68576C11.7403 4.68576 11.312 4.25747 11.312 3.72711C11.312 3.19675 11.7403 2.76847 12.2707 2.76847C12.801 2.76847 13.2293 3.19675 13.2293 3.72711C13.2294 3.85305 13.2048 3.97778 13.1566 4.09416C13.1085 4.21054 13.0379 4.31628 12.9489 4.40533C12.8598 4.49438 12.7541 4.56499 12.6377 4.61311C12.5213 4.66123 12.3966 4.68592 12.2707 4.68576Z"/>
-                            </svg>
-                        </a>
-                    </Link>
-                </li>
-            </ul>
-        </div>
-    </footer>
+  return <footer className={styles.footer}>
+    <div className={containerClass}>
+      <div className={styles.copy}>
+        &copy; {year} Best News
+      </div>
+      <nav className={styles.nav}>
+        <Link href='/about'>
+          <a className={styles.link}>About Us</a>
+        </Link>
+        <Link href='/help'>
+          <a className={styles.link}>Help</a>
+        </Link>
+        <Link href='/advertise'>
+          <a className={styles.link}>Advertise</a>
+        </Link>
+        <Link href='/policy'>
+          <a className={styles.link}>Privacy Policy</a>
+        </Link>
+        <Link href='/terms'>
+          <a className={styles.link}>Terms of Service</a>
+        </Link>
+      </nav>
+      <ul className={styles.footerSocials}>
+        <li className={styles.socialsItem}>
+          <Link href='https://twitter.com/'>
+            <a target='_blank'>
+              <Twitter className={styles.socialsItemFill}/>
+            </a>
+          </Link>
+        </li>
+        <li className={styles.socialsItem}>
+          <Link href='https://www.google.com'>
+            <a target='_blank'>
+              <Facebook className={styles.socialsItemFill}/>
+            </a>
+          </Link>
+        </li>
+        <li className={styles.socialsItem}>
+          <Link href='https://instagram.com/'>
+            <a target='_blank'>
+              <Instagram className={styles.socialsItemFill}/>
+            </a>
+          </Link>
+        </li>
+      </ul>
+    </div>
+  </footer>
 }

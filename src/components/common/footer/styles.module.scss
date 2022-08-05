@@ -45,7 +45,7 @@
   color: $text-color;
 }
 
-.footer__socials {
+.footerSocials {
   list-style-type: none;
   display: flex;
   padding: 0;
@@ -55,14 +55,16 @@
   }
 }
 
-.socials {
-  &__item:not(:last-of-type) {
+.socialsItem {
+  width: 20px;
+  height: 20px;
+  &:not(:last-of-type) {
     margin-right: 13px;
     @include for-tablet-landscape-up {
       margin-right: 40px;
     }
   }
-  &_fill {
+  &Fill {
     height: 20px;
     width: 20px;
     fill: $subtext-color;
@@ -71,7 +73,7 @@
       width: 30px;
     }
   }
-  &_fill:hover {
+  &Fill:hover {
     fill: $text-color;
   }
 }

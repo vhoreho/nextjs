@@ -15,13 +15,6 @@
   @include for-tablet-landscape-up {
     display: none;
   }
-  &__list {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-  }
 }
 
 .logo {
@@ -55,7 +48,7 @@
   &:hover {
     color: $text-color;
   }
-  &_active {
+  &Active {
     @include font-s-semibold;
     color: $text-color;
     height: 100%;
