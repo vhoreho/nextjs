@@ -9,9 +9,7 @@ import styles from './styles.module.scss';
 export function Header() {
     const [open, setOpen] = useState(false);
     const router = useRouter();
-    const {section} = router.query
-
-    console.log(section)
+    const {section} = router.query;
 
     return <header className={styles.header} >
         <div className='container flex-center'>
