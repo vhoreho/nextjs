@@ -24,14 +24,16 @@ a {
 }
 
 main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 1;
-  padding: 40px 0;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding-inline: 1rem;
+  padding-inline: 16px;
 }
 
 .flex-center {

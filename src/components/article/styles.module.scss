@@ -1,4 +1,10 @@
 @import "styles/variables";
+@import "styles/mixins";
+
+.article {
+  align-self: flex-start;
+  padding: 40px 0;
+}
 
 .category {
   text-transform: capitalize;
@@ -34,4 +40,18 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+}
+.backBtn {
+  cursor: pointer;
+  display: inline-block;
+  @include font-heading-2;
+  margin-bottom: 40px;
+  padding: 10px 20px;
+  border: 1px solid $text-color;
+  border-radius: 4px;
+  transition: all .3s ease;
+  &:hover {
+    background: $text-color;
+    color: $bg-color;
+  }
 }
