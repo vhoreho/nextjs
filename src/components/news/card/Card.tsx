@@ -7,7 +7,7 @@ export const Card = ({story, section}) => {
   const date = moment(story.published_date).format('LLL');
   const {section:category, title, abstract, multimedia='Image not found', uri} = story;
   const path = uri.slice(6);
-  console.log(title)
+  const imageSrc = Array.isArray(multimedia) ? multimedia[0].url : 'Image not found';
 
   return (<li className={styles.card}>
     <div className={styles.cardText}>
@@ -19,7 +19,7 @@ export const Card = ({story, section}) => {
           category,
           date,
           abstract,
-          multimedia
+          image: imageSrc
         }
       }} as={`/${path}`}>
         <a className={styles.cardTitle}>{title.length ? title:'Title is not defined'}</a>
