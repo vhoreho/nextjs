@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const Card = ({story, section}) => {
   const date = moment(story.published_date).format('LLL');
-  const {section:category, title, abstract, multimedia, uri} = story;
+  const {section:category, title, abstract, multimedia='Image not found', uri} = story;
   const path = uri.slice(6);
   console.log(title)
 

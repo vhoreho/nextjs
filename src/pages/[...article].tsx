@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
+import classNames from "classnames";
 
 import styles from 'components/article/styles.module.scss';
-import classNames from "classnames";
 
 export default function Article() {
   const router = useRouter();
