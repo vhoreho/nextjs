@@ -28,14 +28,12 @@
   }
   &Image {
     max-width: 612px;
-    height: 380px;
+    height: 458px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     width: 100%;
-    background: $separator-color;
-    @include font-heading-1;
     @include for-tablet-landscape-up {
       max-height: 280px;
     }

@@ -17,7 +17,7 @@ export default function Article() {
         <span className={styles.backBtn} onClick={() => router.back()}>Go Back</span>
       </div>
       <div className={styles.articleImage}>
-        {image?.length ? <Image
+        {image.length ? <Image
           src={image}
           alt={title}
           layout='fill'

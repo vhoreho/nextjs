@@ -8,6 +8,8 @@ export default function Article() {
   const router = useRouter();
   const { abstract, category, date, title, image } = router.query;
   const containerClass = classNames('container', styles.article);
+  console.log(image);
+  
 
   return (
     <div className={containerClass}>
@@ -17,12 +19,12 @@ export default function Article() {
         <span className={styles.backBtn} onClick={() => router.back()}>Go Back</span>
       </div>
       <div className={styles.articleImage}>
-        {image?.length ? <Image
+        <Image
           src={image}
           alt={title}
           layout='fill'
           objectFit='cover'
-        /> : 'Image not found'}
+        />
       </div>
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.description}>{abstract}</p>

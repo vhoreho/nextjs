@@ -4,7 +4,6 @@
 .article {
   align-self: flex-start;
   padding: 40px 20px;
-  width: 100%;
 }
 
 .category {
@@ -68,9 +67,4 @@
   height: 458px;
   position: relative;
   margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: $separator-color;
-  @include font-heading-1;
 }

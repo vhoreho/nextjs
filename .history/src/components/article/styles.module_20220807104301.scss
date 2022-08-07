@@ -68,9 +68,4 @@
   height: 458px;
   position: relative;
   margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: $separator-color;
-  @include font-heading-1;
 }

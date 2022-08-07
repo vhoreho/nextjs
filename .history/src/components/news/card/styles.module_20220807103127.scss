@@ -35,7 +35,7 @@
     position: relative;
     width: 100%;
     background: $separator-color;
-    @include font-heading-1;
+    @include font-heading-2;
     @include for-tablet-landscape-up {
       max-height: 280px;
     }

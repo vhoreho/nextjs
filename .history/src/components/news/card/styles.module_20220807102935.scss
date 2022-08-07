@@ -34,8 +34,7 @@
     align-items: center;
     position: relative;
     width: 100%;
-    background: $separator-color;
-    @include font-heading-1;
+    background: $bg-color;
     @include for-tablet-landscape-up {
       max-height: 280px;
     }
