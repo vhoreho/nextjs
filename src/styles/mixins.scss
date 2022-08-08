@@ -1,18 +1,32 @@
 //Breakpoints
 @mixin for-phone-only {
-  @media (max-width: 599px) { @content; }
+  @media (max-width: 599px) {
+    @content;
+  }
 }
+
 @mixin for-tablet-portrait-up {
-  @media (max-width: 600px) { @content; }
+  @media (max-width: 600px) {
+    @content;
+  }
 }
+
 @mixin for-tablet-landscape-up {
-  @media (max-width: 900px) { @content; }
+  @media (max-width: 900px) {
+    @content;
+  }
 }
+
 @mixin for-desktop-up {
-  @media (max-width: 1200px) { @content; }
+  @media (max-width: 1200px) {
+    @content;
+  }
 }
+
 @mixin for-big-desktop-up {
-  @media (max-width: 1800px) { @content; }
+  @media (max-width: 1800px) {
+    @content;
+  }
 }
 
 //Fonts
@@ -62,9 +76,4 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
-}
-
-@mixin header-shadow {
-  background: #D9D9D9;
-  box-shadow: 0 2px 10px rgba(22, 22, 22, 0.1);
 }

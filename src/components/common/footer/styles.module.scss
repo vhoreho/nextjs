@@ -13,6 +13,7 @@
   flex-wrap: wrap;
   border-top: 1px solid $separator-color;
   padding: 24px 0;
+
   @include for-tablet-landscape-up {
     flex-direction: column;
     align-items: center;
@@ -27,6 +28,7 @@
 
 .nav {
   display: flex;
+
   @include for-tablet-landscape-up {
     flex-direction: column;
     align-items: center;
@@ -35,6 +37,7 @@
 
 .nav .link:not(:last-of-type) {
   margin-right: 32px;
+
   @include for-tablet-landscape-up {
     margin-right: 0;
     margin-bottom: 20px;
@@ -45,37 +48,41 @@
   color: $text-color;
 }
 
-.footerSocials {
+.socials {
   list-style-type: none;
   display: flex;
   padding: 0;
   margin: 0;
+
   @include for-tablet-landscape-up {
     margin: 32px 0;
   }
 }
 
-.socialsItem {
+.icon {
   width: 20px;
   height: 20px;
+
   &:not(:last-of-type) {
     margin-right: 13px;
+
     @include for-tablet-landscape-up {
       margin-right: 40px;
     }
   }
-  &Fill {
-    height: 20px;
-    width: 20px;
-    fill: $subtext-color;
-    @include for-tablet-landscape-up {
-      height: 30px;
-      width: 30px;
-    }
+}
+
+.iconFill {
+  height: 20px;
+  width: 20px;
+  fill: $subtext-color;
+
+  @include for-tablet-landscape-up {
+    height: 30px;
+    width: 30px;
   }
-  &Fill:hover {
+
+  &:hover {
     fill: $text-color;
   }
 }
-
-

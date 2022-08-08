@@ -29,25 +29,25 @@ export function Footer() {
           <a className={styles.link}>Terms of Service</a>
         </Link>
       </nav>
-      <ul className={styles.footerSocials}>
-        <li className={styles.socialsItem}>
+      <ul className={styles.socials}>
+        <li className={styles.icon}>
           <Link href='https://twitter.com/'>
             <a target='_blank'>
-              <Twitter className={styles.socialsItemFill}/>
+              <Twitter className={styles.iconFill} />
             </a>
           </Link>
         </li>
-        <li className={styles.socialsItem}>
+        <li className={styles.icon}>
           <Link href='https://www.google.com'>
             <a target='_blank'>
-              <Facebook className={styles.socialsItemFill}/>
+              <Facebook className={styles.iconFill} />
             </a>
           </Link>
         </li>
-        <li className={styles.socialsItem}>
+        <li className={styles.icon}>
           <Link href='https://instagram.com/'>
             <a target='_blank'>
-              <Instagram className={styles.socialsItemFill}/>
+              <Instagram className={styles.iconFill} />
             </a>
           </Link>
         </li>

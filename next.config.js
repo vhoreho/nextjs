@@ -4,6 +4,15 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ['static01.nyt.com']
+  },
+  async redirects() {
+    return [
+      {
+        source:'/',
+        destination: '/home',
+        permanent: true
+      }
+    ]
   }
 }
 

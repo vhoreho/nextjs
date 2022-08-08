@@ -11,22 +11,26 @@
   overflow: hidden;
   position: relative;
   width: 100%;
+
   @include for-tablet-landscape-up {
     flex-direction: column;
     align-items: center;
   }
-  &Text {
+
+  .text {
     width: 100%;
     padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
+
     @include for-tablet-landscape-up {
       padding: 20px;
     }
   }
-  &Image {
+
+  .image {
     max-width: 612px;
     height: 380px;
     display: flex;
@@ -36,12 +40,13 @@
     width: 100%;
     background: $separator-color;
     @include font-heading-1;
+
     @include for-tablet-landscape-up {
       max-height: 280px;
     }
   }
 
-  &Section {
+  .section {
     text-transform: capitalize;
     padding: 4px 8px;
     background: $primary-color;
@@ -52,17 +57,20 @@
     line-height: 18px;
     margin-bottom: 24px;
   }
-  &Title {
+
+  .title {
     font-weight: 600;
     font-size: 20px;
     line-height: 28px;
     color: $text-color;
     margin-bottom: 24px;
   }
-  &Description {
+
+  .description {
     flex: 1;
   }
-  &Date {
+
+  .date {
     @include for-tablet-landscape-up {
       position: absolute;
       right: 20px;
