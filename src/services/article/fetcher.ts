@@ -1,5 +1,7 @@
 type FieldsType = {
   abstract: string | string[];
+  lead_paragraph: string | string[];
+  section_name: string | string[];
 }
 
 type ResponseData = {
