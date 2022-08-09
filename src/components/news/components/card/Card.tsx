@@ -17,9 +17,7 @@ export const Card = ({ story, section }) => {
         pathname: '/[...article]',
         query: {
           title,
-          category,
           date,
-          abstract,
           image: imageSrc
         }
       }} as={`/${path}`}>

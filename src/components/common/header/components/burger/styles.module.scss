@@ -12,7 +12,7 @@
   cursor: pointer;
   padding: 0;
   z-index: 1;
-  
+
   @include for-tablet-landscape-up {
     display: flex;
   }
