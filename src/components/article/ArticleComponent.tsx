@@ -5,11 +5,16 @@ import classNames from 'classnames';
 import styles from './styles.module.scss';
 
 type Props = {
-  [key: string]: string | string[];
+  abstract: string;
+  category: string;
+  date: string;
+  title: string;
+  image: string
 }
 
-export const ArticleComponent: FC<Props> = ({ abstract, category, date, title, image }) => {
+export const ArticleComponent: FC<Props> = (props) => {
   const router = useRouter();
+  const { abstract, category, date, title, image } = props;
   const containerClass = classNames('container', styles.article);
 
   return (
