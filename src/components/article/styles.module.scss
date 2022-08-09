@@ -75,3 +75,8 @@
   background: $separator-color;
   @include font-heading-1;
 }
+
+.quotes {
+  @include font-s-italic;
+  margin-bottom: 40px;
+}

@@ -5,11 +5,10 @@ import styles from './styles.module.scss';
 
 export function Footer() {
   const year = new Date().getFullYear();
-  const containerClass = classNames('container', styles.container)
 
   return (
     <footer className={styles.footer}>
-      <div className={containerClass}>
+      <div className={classNames('container', styles.container)}>
         <div className={styles.copy}>
           &copy; {year} Best News
         </div>
