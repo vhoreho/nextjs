@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 import styles from './styles.module.scss';
 
 export const Menu = ({ open, setOpen }) => {
