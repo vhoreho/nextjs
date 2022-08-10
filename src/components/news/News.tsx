@@ -11,13 +11,14 @@ type Props = {
 
 export const News: FC<Props> = ({section}) => {
   const {data, error} = useSWR(section, categoryFetcher);
-
+  const filteredData = data?.results.filter(item => item.title);
+  
   return (
     <div className={styles.news}>
       {error && <h2>Something went wrong</h2>}
       {!data && <h2>Loading...</h2>}
       <ul className={styles.list}>
-        {data?.results.map(
+        {filteredData?.map(
           story => <Card key={v4()} story={story} section={section}/>
         )}
       </ul>

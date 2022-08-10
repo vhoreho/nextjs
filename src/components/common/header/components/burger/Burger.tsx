@@ -1,8 +1,14 @@
+import { FC } from "react";
 import classNames from "classnames";
 
 import styles from './styles.module.scss'
 
-export const Burger = ({open, setOpen}) => {
+type Props = {
+  open: boolean;
+  setOpen: (value: boolean) => void
+}
+
+export const Burger: FC<Props> = ({ open, setOpen }) => {
   const btnClass = classNames(styles.button, {
     'active': open
   })
