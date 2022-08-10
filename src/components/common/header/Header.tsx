@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import classNames from "classnames";
 import { Logo } from "components/icon";
 import { Burger } from "./components/burger/Burger";
 import { Menu } from "./components/menu/Menu";
-import classNames from "classnames";
 
 import styles from './styles.module.scss';
 

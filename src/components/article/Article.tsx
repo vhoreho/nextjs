@@ -12,7 +12,7 @@ type Props = {
   image: string
 }
 
-export const ArticleComponent: FC<Props> = (props) => {
+export const Article: FC<Props> = (props) => {
   const router = useRouter();
   const { abstract, category, date, title, image } = props;
   const containerClass = classNames('container', styles.article);
