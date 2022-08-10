@@ -1,21 +1,29 @@
+import { useMemo } from "react";
 import { GetServerSideProps } from "next";
+import { SWRConfig } from "swr";
 import { articleFetcher } from "services/article/fetcher";
 import { Article } from "components/article/Article";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { url } = context.query;
-  const data = await articleFetcher(url);
+  const URL = String(url);
+  const data = await articleFetcher(URL);
 
   return {
     props: {
-      story: data.response.docs[0]
+      fallback: {
+        [URL]: data,
+        URL
+      }
     }
   }
 }
 
-export default function ArticlePage({ story }) {
+export default function ArticlePage({ fallback }) {
 
   return (
-    <Article {...story} />
+    <SWRConfig value={{ fallback }}>
+      <Article url={fallback.URL} />
+    </SWRConfig>
   )
 }

@@ -1,19 +1,6 @@
-type FieldsType = {
-  abstract: string | string[];
-  headline: string | string[];
-  lead_paragraph: string | string[];
-  section_name: string | string[];
-}
+import { ArticleData } from "./types";
 
-type ResponseData = {
-  docs: FieldsType;
-}
-
-type ArticleData = {
-  response: ResponseData
-}
-
-export async function articleFetcher(url: string | string[]): Promise<ArticleData> {
+export async function articleFetcher(url: string): Promise<ArticleData> {
   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_PATH}/search/v2/articlesearch.json?fq=web_url:("${url}")&api-key=${process.env.NEXT_PUBLIC_KEY}`);
 
   try {
