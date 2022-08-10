@@ -1,4 +1,3 @@
-import { ReactElement } from "react";
 import { GetServerSideProps } from "next";
 import { categoryFetcher } from 'services/category/fetcher';
 import { News } from "components/news/News";
@@ -15,8 +14,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 }
 
-export default function Section({ news }): ReactElement {
-
+export default function Section({ news }) {
   return (
     <News news={news} />
   )

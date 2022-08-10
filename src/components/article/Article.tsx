@@ -12,8 +12,6 @@ type Props = {
 }
 
 export const Article: FC<Props> = ({ url }) => {
-  console.log("ARTICLE RENDER");
-
   const router = useRouter();
   const { data } = useSWR(url, articleFetcher);
   const {

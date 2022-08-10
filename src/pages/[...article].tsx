@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { GetServerSideProps } from "next";
 import { SWRConfig } from "swr";
 import { articleFetcher } from "services/article/fetcher";
@@ -20,7 +19,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 }
 
 export default function ArticlePage({ fallback }) {
-
   return (
     <SWRConfig value={{ fallback }}>
       <Article url={fallback.URL} />
