@@ -2,7 +2,8 @@ import Link from "next/link";
 
 import styles from './styles.module.scss';
 
-export const Menu = ({open, setOpen}) => {
+export const Menu = ({ open, setOpen }) => {
+
   return (
     <div>
       <button className={styles.close} onClick={() => setOpen(!open)}>x</button>
