@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import moment from "moment";
-
 import styles from './styles.module.scss';
 
 export const Card = ({ story, section }) => {
