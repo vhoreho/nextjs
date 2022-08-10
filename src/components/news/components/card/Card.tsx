@@ -1,14 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { formatDate } from "utils/formatDate";
-
 import styles from './styles.module.scss';
 
 export const Card = ({ story, section }) => {
   const date = formatDate(story.published_date, 'LLL');
   const { section: category, title, abstract, multimedia = 'Image not found', uri, url } = story;
   const path = uri.slice(6);
-  const imageSrc = Array.isArray(multimedia) ? multimedia[0].url : '';
 
   return (
     <li className={styles.card}>
@@ -17,8 +15,7 @@ export const Card = ({ story, section }) => {
         <Link href={{
           pathname: '/[...article]',
           query: {
-            url,
-            image: imageSrc
+            url
           }
         }} as={`/${path}`}>
           <a className={styles.title}>{title.length ? title : 'Title is not defined'}</a>

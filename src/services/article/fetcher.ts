@@ -1,5 +1,6 @@
 type FieldsType = {
   abstract: string | string[];
+  headline: string | string[];
   lead_paragraph: string | string[];
   section_name: string | string[];
 }

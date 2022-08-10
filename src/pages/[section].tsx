@@ -6,7 +6,6 @@ import { News } from "components/news/News";
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { section } = context.query;
   const data = await categoryFetcher(section);
-
   const filteredData = data?.results.filter(item => item.title);
 
   return {

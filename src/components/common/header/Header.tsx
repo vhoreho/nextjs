@@ -5,7 +5,6 @@ import classNames from "classnames";
 import { Logo } from "components/icon";
 import { Burger } from "./components/burger/Burger";
 import { Menu } from "./components/menu/Menu";
-
 import styles from './styles.module.scss';
 
 export function Header() {
