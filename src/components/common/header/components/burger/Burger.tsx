@@ -1,6 +1,5 @@
 import { FC } from "react";
 import classNames from "classnames";
-
 import styles from './styles.module.scss'
 
 type Props = {
