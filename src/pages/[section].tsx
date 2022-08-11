@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next";
+import { SWRConfig } from "swr";
 import { categoryFetcher } from 'services/category/fetcher';
 import { News } from "components/news/News";
-import { SWRConfig } from "swr";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { section } = context.query;

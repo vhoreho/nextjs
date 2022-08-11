@@ -1,10 +1,9 @@
-import { FC } from "react";
 import { v4 } from "uuid";
 import useSWR from "swr";
 import { useRouter } from "next/router";
+import { categoryFetcher } from "services/category/fetcher";
 import { Card } from "./components/card/Card";
 import styles from './styles.module.scss';
-import { categoryFetcher } from "services/category/fetcher";
 
 export const News = () => {
   const router = useRouter();
