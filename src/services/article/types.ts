@@ -16,7 +16,7 @@ type FieldsType = {
 }
 
 type ResponseData = {
-  docs: FieldsType;
+  docs: FieldsType[];
 }
 
 export type ArticleData = {
