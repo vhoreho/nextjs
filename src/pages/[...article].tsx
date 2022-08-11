@@ -1,27 +1,25 @@
 import { GetServerSideProps } from "next";
-import { SWRConfig } from "swr";
 import { articleFetcher } from "services/article/fetcher";
 import { Article } from "components/article/Article";
+import { type } from "os";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { url } = context.query;
-  const source = String(url);
-  const data = await articleFetcher(source);
+  const articleUrl = typeof url === 'string' ? url : '';
+  const data = await articleFetcher(articleUrl);
 
   return {
     props: {
+      articleUrl,
       fallback: {
-        [source]: data,
-        source
+        [articleUrl]: data
       }
     }
   }
 }
 
-export default function ArticlePage({ fallback }) {
+export default function ArticlePage({ articleUrl }) {
   return (
-    <SWRConfig value={{ fallback }}>
-      <Article url={fallback.source} />
-    </SWRConfig>
+    <Article url={articleUrl} />
   )
 }
