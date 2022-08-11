@@ -1,7 +1,6 @@
 import { GetServerSideProps } from "next";
 import { articleFetcher } from "services/article/fetcher";
 import { Article } from "components/article/Article";
-import { type } from "os";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { url } = context.query;
