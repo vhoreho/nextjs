@@ -5,14 +5,14 @@ import { Article } from "components/article/Article";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { url } = context.query;
-  const URL = String(url);
-  const data = await articleFetcher(URL);
+  const source = String(url);
+  const data = await articleFetcher(source);
 
   return {
     props: {
       fallback: {
-        [URL]: data,
-        URL
+        [source]: data,
+        source
       }
     }
   }
@@ -21,7 +21,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 export default function ArticlePage({ fallback }) {
   return (
     <SWRConfig value={{ fallback }}>
-      <Article url={fallback.URL} />
+      <Article url={fallback.source} />
     </SWRConfig>
   )
 }

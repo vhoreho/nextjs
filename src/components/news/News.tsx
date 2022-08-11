@@ -1,22 +1,22 @@
 import { FC } from "react";
 import { v4 } from "uuid";
+import useSWR from "swr";
 import { useRouter } from "next/router";
 import { Card } from "./components/card/Card";
 import styles from './styles.module.scss';
+import { categoryFetcher } from "services/category/fetcher";
 
-type Props = {
-  [key: string]: Array<string | string[] | undefined>;
-}
-
-export const News: FC<Props> = ({ news }) => {
+export const News = () => {
   const router = useRouter();
   const { section } = router.query;
+  const { data: { results } } = useSWR(String(section), categoryFetcher);
+  const filteredData = results.filter(item => item.title && item.abstract);
 
   return (
     <div className={styles.news}>
-      {!news.length && <h2>Loading...</h2>}
+      {!filteredData && <h2>Loading...</h2>}
       <ul className={styles.list}>
-        {news?.map(
+        {filteredData?.map(
           story => <Card key={v4()} story={story} section={section} />
         )}
       </ul>

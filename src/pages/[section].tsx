@@ -1,21 +1,26 @@
 import { GetServerSideProps } from "next";
 import { categoryFetcher } from 'services/category/fetcher';
 import { News } from "components/news/News";
+import { SWRConfig } from "swr";
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { section } = context.query;
-  const data = await categoryFetcher(section);
-  const filteredData = data?.results.filter(item => item.title && item.abstract);
+  const category = String(section)
+  const data = await categoryFetcher(category);
 
   return {
     props: {
-      news: filteredData
+      fallback: {
+        [category]: data
+      }
     }
   }
 }
 
-export default function Section({ news }) {
+export default function Section({ fallback }) {
   return (
-    <News news={news} />
+    <SWRConfig value={{ fallback }}>
+      <News />
+    </SWRConfig>
   )
 }
