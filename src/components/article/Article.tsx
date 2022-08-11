@@ -15,12 +15,12 @@ export const Article: FC<Props> = ({ url }) => {
   const router = useRouter();
   const { data } = useSWR(url, articleFetcher);
   const {
-    section_name = 'Section not defined',
-    pub_date = 'Date not defined',
-    multimedia = 'Multimedia not defined',
-    headline = 'Title not defined',
-    abstract = 'Abstract not defined',
-    lead_paragraph = 'Description not defined'
+    section_name,
+    pub_date,
+    multimedia,
+    headline,
+    abstract,
+    lead_paragraph
   } = data.response.docs[0];
   const image = multimedia[0].url;
 

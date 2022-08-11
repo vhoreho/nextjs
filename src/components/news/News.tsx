@@ -10,7 +10,7 @@ export const News = () => {
   const router = useRouter();
   const { section } = router.query;
   const { data: { results } } = useSWR(section, categoryFetcher);
-  const memoizedData = useMemo(() => results?.filter(item => item.title && item.abstract), results);
+  const memoizedData = useMemo(() => results?.filter(item => item.title && item.abstract), [results]);
 
   return (
     <div className={styles.news}>
