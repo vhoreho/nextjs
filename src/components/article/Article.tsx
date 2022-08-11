@@ -8,20 +8,13 @@ import { formatDate } from 'utils/formatDate';
 import styles from './styles.module.scss';
 
 type Props = {
-  url: string;
+  id: string;
 }
 
-export const Article: FC<Props> = ({ url }) => {
+export const Article: FC<Props> = ({ id }) => {
   const router = useRouter();
-  const { data } = useSWR(url, articleFetcher);
-  const {
-    section_name,
-    pub_date,
-    multimedia,
-    headline,
-    abstract,
-    lead_paragraph
-  } = data.response.docs[0];
+  const { data: { response: { docs } } } = useSWR(id, articleFetcher);
+  const { section_name, pub_date, multimedia, headline, abstract, lead_paragraph } = { ...docs[0] };
   const image = multimedia[0].url;
 
   return (

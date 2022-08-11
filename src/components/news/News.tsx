@@ -10,11 +10,12 @@ export const News = () => {
   const router = useRouter();
   const { section } = router.query;
   const { data: { results } } = useSWR(section, categoryFetcher);
-  const memoizedData = useMemo(() => results.filter(item => item.title && item.abstract), [results]);
+  const memoizedData = useMemo(() => results ? [...results].filter(item => item.title && item.abstract) : [], [results]);
 
   return (
     <div className={styles.news}>
-      {!memoizedData && <h2>Loading...</h2>}
+      {!results && <h2>Loading...</h2>}
+      {!memoizedData.length && <h2>Too many requests to server, please wait some time</h2>}
       <ul className={styles.list}>
         {memoizedData?.map(
           story => <Card key={v4()} story={story} section={section} />
