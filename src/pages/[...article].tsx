@@ -1,11 +1,25 @@
-import { useRouter } from "next/router";
+import { GetServerSideProps } from "next";
+import { articleFetcher } from "services/article/fetcher";
 import { Article } from "components/article/Article";
+import { type } from "os";
 
-export default function ArticlePage() {
-  const router = useRouter();
-  const data = router.query;
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { url } = context.query;
+  const articleUrl = typeof url === 'string' ? url : '';
+  const data = await articleFetcher(articleUrl);
 
+  return {
+    props: {
+      articleUrl,
+      fallback: {
+        [articleUrl]: data
+      }
+    }
+  }
+}
+
+export default function ArticlePage({ articleUrl }) {
   return (
-    <Article {...data} />
+    <Article url={articleUrl} />
   )
 }

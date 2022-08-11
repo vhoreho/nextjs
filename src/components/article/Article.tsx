@@ -1,39 +1,48 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import useSWR from 'swr';
 import classNames from 'classnames';
+import { articleFetcher } from 'services/article/fetcher';
+import { formatDate } from 'utils/formatDate';
 import styles from './styles.module.scss';
 
 type Props = {
-  abstract: string;
-  category: string;
-  date: string;
-  title: string;
-  image: string
+  url: string;
 }
 
-export const Article: FC<Props> = (props) => {
+export const Article: FC<Props> = ({ url }) => {
   const router = useRouter();
-  const { abstract, category, date, title, image } = props;
-  const containerClass = classNames('container', styles.article);
+  const { data } = useSWR(url, articleFetcher);
+  const {
+    section_name = 'Section not defined',
+    pub_date = 'Date not defined',
+    multimedia = 'Multimedia not defined',
+    headline = 'Title not defined',
+    abstract = 'Abstract not defined',
+    lead_paragraph = 'Description not defined'
+  } = data.response.docs[0];
+  const image = multimedia[0].url;
 
   return (
-    <div className={containerClass}>
+    <div className={classNames('container', styles.article)}>
       <div className={styles.top}>
-        <span className={styles.category}>{category}</span>
-        <span className={styles.date}>{date}</span>
+        <span className={styles.category}>{section_name}</span>
+        <span className={styles.date}>{formatDate(pub_date, 'LLL')}</span>
         <span className={styles.backBtn} onClick={() => router.back()}>Go Back</span>
       </div>
       <div className={styles.image}>
         {image?.length ? <Image
-          src={image}
-          alt={title}
+          src={`https://www.nytimes.com/${image}`}
           layout='fill'
           objectFit='cover'
-        /> : 'Image not found'}
+          priority
+        /> :
+          'Image not found'}
       </div>
-      <h2 className={styles.title}>{title}</h2>
-      <p className={styles.description}>{abstract}</p>
+      <h2 className={styles.title}>{headline.main}</h2>
+      <p className={styles.quotes}>{`"${abstract}"`}</p>
+      <p className={styles.description}>{lead_paragraph}</p>
     </div>
   )
 }

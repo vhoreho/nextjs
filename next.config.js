@@ -3,12 +3,12 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['static01.nyt.com']
+    domains: ['static01.nyt.com', 'www.nytimes.com']
   },
   async redirects() {
     return [
       {
-        source:'/',
+        source: '/',
         destination: '/home',
         permanent: true
       }
