@@ -4,6 +4,7 @@ import { Footer } from "components/common/footer/Footer";
 import 'styles/globals.scss';
 
 export default function MyApp({ Component, pageProps }) {
+
   return (
     <SWRConfig value={{ fallback: pageProps.fallback ?? {} }}>
       <Header />

@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 
 export const Card = ({ story, section }) => {
   const date = formatDate(story.published_date, 'LLL');
-  const { section: category, title, abstract, multimedia = 'Image not found', uri } = story;
+  const { section: category, title, abstract, multimedia = 'Image not found', uri, url } = story;
   const path = uri.slice(6);
 
   return (
@@ -13,7 +13,10 @@ export const Card = ({ story, section }) => {
       <div className={styles.text}>
         <span className={styles.section}>{!category ? section : category}</span>
         <Link href={{
-          pathname: `/[...article]`
+          pathname: '/[...article]',
+          query: {
+            url
+          }
         }} as={`/${path}`}>
           <a className={styles.title}>{title.length ? title : 'Title is not defined'}</a>
         </Link>
