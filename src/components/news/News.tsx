@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useRouter } from "next/router";
 import { v4 } from "uuid";
-import useSWR from "swr";
+import useSWRImmutable from "swr";
 import { categoryFetcher } from "services/category/fetcher";
 import { Card } from "./components/card/Card";
 import styles from './styles.module.scss';
@@ -9,7 +9,7 @@ import styles from './styles.module.scss';
 export const News = () => {
   const router = useRouter();
   const { section } = router.query;
-  const { data: { results } } = useSWR(section, categoryFetcher);
+  const { data: { results } } = useSWRImmutable(section, categoryFetcher);
   const memoizedData = useMemo(() => results ? [...results].filter(item => item.title && item.abstract) : [], [results]);
 
   return (

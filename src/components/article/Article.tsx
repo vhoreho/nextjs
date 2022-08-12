@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import useSWR from 'swr';
+import useSWRImmutable from 'swr';
 import classNames from 'classnames';
 import { articleFetcher } from 'services/article/fetcher';
 import { formatDate } from 'utils/formatDate';
@@ -13,7 +13,7 @@ type Props = {
 
 export const Article: FC<Props> = ({ id }) => {
   const router = useRouter();
-  const { data: { response: { docs } } } = useSWR(id, articleFetcher);
+  const { data: { response: { docs } } } = useSWRImmutable(id, articleFetcher);
   const { section_name, pub_date, multimedia, headline, abstract, lead_paragraph } = { ...docs[0] };
   const image = multimedia[0].url;
 
