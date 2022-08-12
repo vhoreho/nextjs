@@ -1,27 +1,21 @@
 import React, { FC } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import useSWR from 'swr';
+import useSWRImmutable from 'swr';
 import classNames from 'classnames';
 import { articleFetcher } from 'services/article/fetcher';
 import { formatDate } from 'utils/formatDate';
 import styles from './styles.module.scss';
 
 type Props = {
-  url: string;
+  id: string;
 }
 
-export const Article: FC<Props> = ({ url }) => {
+export const Article: FC<Props> = ({ id }) => {
   const router = useRouter();
-  const { data } = useSWR(url, articleFetcher);
-  const {
-    section_name = 'Section not defined',
-    pub_date = 'Date not defined',
-    multimedia = 'Multimedia not defined',
-    headline = 'Title not defined',
-    abstract = 'Abstract not defined',
-    lead_paragraph = 'Description not defined'
-  } = data.response.docs[0];
+  const { data: { response: { docs } } } = useSWRImmutable(id, articleFetcher);
+  const { section_name, pub_date, multimedia, headline, abstract, lead_paragraph } = docs[0]
+
   const image = multimedia[0].url;
 
   return (
