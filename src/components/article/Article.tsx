@@ -14,7 +14,7 @@ type Props = {
 export const Article: FC<Props> = ({ id }) => {
   const router = useRouter();
   const { data: { response: { docs } } } = useSWRImmutable(id, articleFetcher);
-  const { section_name, pub_date, multimedia, headline, abstract, lead_paragraph } = { ...docs[0] };
+  const { section_name, pub_date, multimedia, headline, abstract, lead_paragraph } = docs[0]
   const image = multimedia[0].url;
 
   return (
