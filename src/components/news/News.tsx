@@ -12,6 +12,7 @@ export const News = () => {
   const { data: { results } } = useSWRImmutable(section, categoryFetcher);
   const memoizedData = useMemo(() => results ? [...results].filter(item => item.title && item.abstract) : [], [results]);
 
+
   return (
     <div className={styles.news}>
       {!results && <h2>Loading...</h2>}
