@@ -28,6 +28,7 @@ export const Article: FC<Props> = ({ id }) => {
       <div className={styles.image}>
         {image?.length ? <Image
           src={`https://www.nytimes.com/${image}`}
+          alt={String(headline.main)}
           layout='fill'
           objectFit='cover'
           priority
