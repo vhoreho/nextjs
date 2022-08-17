@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dreams",
+  "info": {
+    "singularName": "dream",
+    "pluralName": "dreams",
+    "displayName": "dream stories",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "created": {
+      "type": "datetime"
+    }
+  }
+}
